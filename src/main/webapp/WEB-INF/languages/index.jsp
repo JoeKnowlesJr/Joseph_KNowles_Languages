@@ -26,8 +26,11 @@
 							<td>${l.getCreator()}</td>
 							<td>${l.getVersion()}</td>
 							<td>
-								<a href="">delete</a>
-								<a href="">edit</a>
+								<form action="/languages/${l.getId()}" method="post">
+								    <input type="hidden" name="_method" value="delete">
+								    <input type="submit" value="Delete">
+								</form>
+								<a href="/languages/${l.getId()}/edit">edit</a>
 							</td>
 						</tr>
 					</c:forEach>

@@ -51,7 +51,7 @@ public class LanguageController {
     @GetMapping("/languages/{lang_id}/edit")
     public String edit(@PathVariable("lang_id") Long lang_id, Model model) {
         model.addAttribute("language", service.findLanguage(lang_id));
-        return "/books/edit.jsp";
+        return "/languages/edit.jsp";
     }
     
     @PutMapping("/languages/{id}")
@@ -64,7 +64,7 @@ public class LanguageController {
         }
     }
     
-    @DeleteMapping("/languages/{id}")
+    @DeleteMapping("/languages/{lang_id}")
     public String destroy(@PathVariable("lang_id") Long lang_id) {
     	service.deleteLanguage(lang_id);
         return "redirect:/languages";
